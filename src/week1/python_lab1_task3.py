@@ -8,11 +8,18 @@ Write a function `analyze_sentence(text)` that returns:
 Return results as a tuple and print summary in main.
 """
 
+
 def analyze_sentence(text):
     """Return length, word count, and whether 'Python' appears in text."""
-    # TODO: implement function logic
-    pass
+    char_count = len(text)
+    word_count = len(text.split())
+    contains_python = "python" in text.lower()  # case-insensitive check
+    return char_count, word_count, contains_python  # TODO: implement function logic
+
 
 if __name__ == "__main__":
-    # TODO: read sentence from input, call function, and print results
-    pass
+    sentence = input("Enter a sentence: ")  # TODO: read sentence from input
+    chars, words, has_python = analyze_sentence(sentence)  # TODO: call function
+    print(f"Total characters: {chars}")
+    print(f"Total words: {words}")
+    print(f"Contains 'Python': {has_python}")  # TODO: print results
