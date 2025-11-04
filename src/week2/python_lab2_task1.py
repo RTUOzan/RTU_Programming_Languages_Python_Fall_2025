@@ -16,14 +16,24 @@ Instructions:
 """
 
 # TODO: Create the datasets - up to you to fill in the data
-temperatures = []
-city_population = {}
+temperatures = [12, 15, 14, 10, 9, 11, 13]
+city_population = {
+    "Riga": 632614,
+    "Vilnius": 588412,
+    "Tallinn": 453996,
+    "Kaunas": 298607,
+    "Tartu": 91248,
+}
 
 # TODO: Compute aggregates
-average_temperature = 0
-largest_city = ""
-largest_population = 0
-total_population = 0
+average_temperature = sum(temperatures) / len(temperatures)
+largest_city = None
+largest_population = -1
+for city in city_population:
+    if city_population[city] > largest_population:
+        largest_population = city_population[city]
+        largest_city = city
+total_population = sum(city_population.values())
 
 # TODO: Print results
 print("Average temperature:", average_temperature)
